@@ -4,4 +4,6 @@
 
     <!-- Done: Add necessary dimension values -->
     <dimen name="default_margin">16dp</dimen>
+    <dimen name="layout_0dp">0dp</dimen>
+    <dimen name="layout_32dp">32dp</dimen>
 </resources>

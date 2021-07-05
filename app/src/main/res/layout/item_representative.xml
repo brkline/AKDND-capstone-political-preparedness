@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:profileImage="@{repModel.official.photoUrl}"
-        tools:src="@drawable/ic_profile"/>
+        tools:src="@drawable/ic_profile" />
 
     <TextView
         android:id="@+id/office_name"
@@ -29,6 +29,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/representative_photo"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/default_padding"
         tools:text="Office Name"/>
     <TextView
         android:id="@+id/officials_name"
@@ -37,6 +38,7 @@
         android:text="@{repModel.official.name}"
         app:layout_constraintStart_toEndOf="@+id/representative_photo"
         app:layout_constraintTop_toBottomOf="@id/office_name"
+        android:layout_marginStart="@dimen/default_padding"
         tools:text="Official's Name" />
 
     <TextView
@@ -46,28 +48,29 @@
         android:text="@{repModel.official.party}"
         app:layout_constraintStart_toEndOf="@+id/representative_photo"
         app:layout_constraintTop_toBottomOf="@id/officials_name"
+        android:layout_marginStart="@dimen/default_padding"
         tools:text="Party Affiliation" />
 
     <ImageView
         android:id="@+id/website"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="@dimen/layout_32dp"
+        android:layout_height="@dimen/layout_32dp"
         app:layout_constraintBottom_toBottomOf="@id/party_affiliation"
         app:layout_constraintEnd_toStartOf="@id/facebook"
         app:layout_constraintTop_toTopOf="@id/officials_name"
         android:src="@drawable/ic_www" />
     <ImageView
         android:id="@+id/facebook"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="@dimen/layout_32dp"
+        android:layout_height="@dimen/layout_32dp"
         app:layout_constraintBottom_toBottomOf="@id/website"
         app:layout_constraintEnd_toStartOf="@id/twitter_handle"
         app:layout_constraintTop_toTopOf="@id/website"
         android:src="@drawable/ic_facebook" />
     <ImageView
         android:id="@+id/twitter_handle"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="@dimen/layout_32dp"
+        android:layout_height="@dimen/layout_32dp"
         app:layout_constraintBottom_toBottomOf="@id/website"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/website"

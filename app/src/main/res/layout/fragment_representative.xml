@@ -45,7 +45,7 @@
         <EditText
             android:id="@+id/address_line_2"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/layout_0dp"
             android:autofillHints="Address Line 2"
             android:inputType="textPostalAddress"
             android:text="@{repViewModel.address.line2}"
@@ -57,7 +57,7 @@
         <!-- Done: Add visual styling and content -->
         <EditText
             android:id="@+id/city"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_0dp"
             android:layout_height="wrap_content"
             android:autofillHints="City"
             android:inputType="textPostalAddress"
@@ -72,8 +72,8 @@
         <!-- Done: Add visual styling and content -->
         <Spinner
             android:id="@+id/state"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="@dimen/layout_0dp"
+            android:layout_height="@dimen/layout_0dp"
             android:autofillHints="State"
             stateValue="@{repViewModel.address.state}"
             android:entries="@array/states"
@@ -86,7 +86,7 @@
         <!-- Done: Add visual styling and content -->
         <EditText
             android:id="@+id/zip"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_0dp"
             android:layout_height="wrap_content"
             android:autofillHints="Postal Code"
             android:inputType="number"
@@ -129,8 +129,8 @@
         <!-- Done: Add Representatives RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fragment_representative_recyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="@dimen/layout_0dp"
+            android:layout_height="@dimen/layout_0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +141,7 @@
         <TextView
             android:id="@+id/list_placeholder"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/layout_0dp"
             android:gravity="center"
             android:textAlignment="center"
             android:visibility="gone"
