@@ -25,7 +25,7 @@
         android:id="@+id/office_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@{repModel.office.name"
+        android:text="@{repModel.office.name}"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/representative_photo"
         app:layout_constraintTop_toTopOf="parent"
