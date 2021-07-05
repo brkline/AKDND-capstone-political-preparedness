@@ -7,14 +7,20 @@
     <string name="fragment_launch_ballet_logo_content_description_text">Ballet Logo</string>
     <string name="fragment_election_upcoming_elections_heading_text">Upcoming Elections</string>
     <string name="fragment_election_saved_elections_heading_text">Saved Elections</string>
-    <string name="fragment_representative_search_title_text">Search for my Representative</string>
+    <string name="fragment_representative_search_title_text">Representative Search</string>
     <string name="fragment_voter_info_election_information_text">Election Information</string>
-    <string name="fragment_voter_info_voting_locations_text">Voting Locations</string>
-    <string name="fragment_voter_info_ballot_information_text">Ballot Information</string>
+    <string name="fragment_voter_info_voting_locations_text">Tap Here for Voting Locations</string>
+    <string name="fragment_voter_info_ballot_information_text">Tap Here for Ballot Information</string>
     <string name="unfollow_election_text">Unfollow Election</string>
     <string name="follow_election_text">Follow Election</string>
     <string name="fragment_representatives_find_my_representatives_button_text">Find My Representatives</string>
     <string name="fragment_respresentative_use_my_location_button_text">Use My Location</string>
     <string name="location_failed">We are having trouble getting your location.  Please check your location settings.</string>
+    <string name="fragment_representative_representative_title_text">My Representatives</string>
+    <string name="fragment_representative_postal_code_hint">Postal Code</string>
+    <string name="fragment_representative_city_hint">City</string>
+    <string name="fragment_representative_address_line_2_hint">Address Line 2</string>
+    <string name="fragment_representative_address_line_1_hint">Address Line 1</string>
+    <string name="fragment_voter_info_correspondence_header_text">Correspondence Address</string>
 
 </resources>

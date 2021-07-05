@@ -11,7 +11,8 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/default_padding">
 
     <TextView
         android:id="@+id/election_title"
@@ -21,7 +22,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Election Title" />
+        tools:text="Election Title"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/election_description"

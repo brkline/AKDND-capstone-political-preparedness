@@ -16,6 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/default_margin"
         tools:context="com.example.android.politicalpreparedness.MainActivity">
 
         <!-- Done: Add title to toolbar -->
@@ -29,30 +30,32 @@
             app:titleTextColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:title="@{electionsViewModel.election.name}"
-            tools:text="Election Name"/>
+            tools:text="Election Name" />
 
-        <!-- TODO: Add visual styling -->
+        <!-- Done: Add visual styling -->
         <TextView
             android:id="@+id/election_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{electionsViewModel.election.electionDay.toString()}"
-            android:layout_margin="@dimen/default_padding"
+            android:layout_margin="@dimen/default_margin"
             app:layout_constraintTop_toBottomOf="@id/election_name"
             tools:text="12 November 2055" />
 
-        <!-- TODO: Add visual styling and content -->
+        <!-- Done: Add visual styling and content -->
         <TextView
             android:id="@+id/state_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fragment_voter_info_election_information_text"
             android:textStyle="bold"
+            android:layout_marginTop="@dimen/default_margin"
             app:layout_constraintTop_toBottomOf="@id/election_date"
             app:layout_constraintStart_toStartOf="@id/election_date" />
 
         <!-- Done: Add click binding to open web URL -->
-        <!-- TODO: Add visual styling and content -->
+        <!-- Done: Add visual styling and content -->
+        <!-- TextUtils code based on https://code.luasoftware.com/tutorials/android/check-empty-string-in-android-databinding/-->
         <TextView
             android:id="@+id/state_locations"
             android:layout_width="wrap_content"
@@ -61,10 +64,12 @@
             android:visibility="@{TextUtils.isEmpty(electionsViewModel.voterInfo.state[0].electionAdministrationBody.votingLocationFinderUrl) ? View.GONE: View.VISIBLE}"
             app:layout_constraintTop_toBottomOf="@id/state_header"
             app:layout_constraintStart_toStartOf="@id/election_date"
-            android:text="@string/fragment_voter_info_voting_locations_text"/>
+
+            android:text="@string/fragment_voter_info_voting_locations_text" />
 
         <!-- Done: Add click binding to open web URL -->
-        <!-- TODO: Add visual styling and content -->
+        <!-- Done: Add visual styling and content -->
+        <!-- TextUtils code based on https://code.luasoftware.com/tutorials/android/check-empty-string-in-android-databinding/-->
         <TextView
             android:id="@+id/state_ballot"
             android:layout_width="wrap_content"
@@ -73,7 +78,8 @@
             app:layout_constraintStart_toStartOf="@id/election_date"
             android:onClick="@{()->electionsViewModel.setIntentUrl(electionsViewModel.voterInfo.state[0].electionAdministrationBody.electionInfoUrl)}"
             android:visibility="@{TextUtils.isEmpty(electionsViewModel.voterInfo.state[0].electionAdministrationBody.electionInfoUrl) ? View.GONE: View.VISIBLE}"
-            android:text="@string/fragment_voter_info_ballot_information_text"/>
+            android:text="@string/fragment_voter_info_ballot_information_text"
+            android:layout_marginTop="@dimen/default_padding"/>
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/address_group"
@@ -81,15 +87,22 @@
             android:layout_height="wrap_content"
             app:constraint_referenced_ids="state_correspondence_header,address" />
 
-        <!-- TODO: Add visual styling and content -->
+        <!-- Done: Add visual styling and content -->
+        <!-- TextUtils code based on https://code.luasoftware.com/tutorials/android/check-empty-string-in-android-databinding/-->
         <TextView
             android:id="@+id/state_correspondence_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/state_ballot"
-            app:layout_constraintStart_toStartOf="@id/election_date" />
+            app:layout_constraintStart_toStartOf="@id/election_date"
+            android:text="@string/fragment_voter_info_correspondence_header_text"
+            android:visibility="@{TextUtils.isEmpty(electionsViewModel.voterInfo.state[0].electionAdministrationBody.correspondenceAddress.toFormattedString()) ? View.GONE: View.VISIBLE}"
+            android:textStyle="bold"
+            tools:text="Correspondence Address"
+            android:layout_marginTop="@dimen/default_margin"/>
 
         <!-- Done: Add data binding -->
+        <!-- TextUtils code based on https://code.luasoftware.com/tutorials/android/check-empty-string-in-android-databinding/-->
         <TextView
             android:id="@+id/address"
             android:layout_width="wrap_content"
@@ -97,18 +110,20 @@
             android:text="@{electionsViewModel.voterInfo.state.get(0).electionAdministrationBody.correspondenceAddress.toFormattedString()}"
             android:visibility="@{TextUtils.isEmpty(electionsViewModel.voterInfo.state[0].electionAdministrationBody.correspondenceAddress.toFormattedString()) ? View.GONE: View.VISIBLE}"
             app:layout_constraintTop_toBottomOf="@id/state_correspondence_header"
-            app:layout_constraintStart_toStartOf="@id/election_date" />
+            app:layout_constraintStart_toStartOf="@id/election_date"
+            tools:text="Address Info" />
 
         <!-- Done: Add button to save election to Room -->
         <Button
             android:id="@+id/button_follow"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{electionsViewModel.isFollowed ? @string/unfollow_election_text: @string/follow_election_text}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="Follow"/>
+            tools:text="Follow"
+            style="@style/ButtonStyle"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
