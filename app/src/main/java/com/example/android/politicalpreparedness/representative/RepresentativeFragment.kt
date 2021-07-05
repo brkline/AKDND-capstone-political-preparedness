@@ -22,6 +22,7 @@ import com.example.android.politicalpreparedness.network.models.Address
 import com.example.android.politicalpreparedness.representative.adapter.RepresentativeListAdapter
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.snackbar.Snackbar
 import java.util.Locale
 
 class RepresentativeFragment : Fragment() {
@@ -116,12 +117,20 @@ class RepresentativeFragment : Fragment() {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity as Activity)
 
         //Done: The geoCodeLocation method is a helper function to change the lat/long location to a human readable street address
-        fusedLocationProviderClient.lastLocation.addOnSuccessListener { location ->
-            try {
-                val address = geoCodeLocation(location)
-                representativeViewModel.setAddress(address)
-            } catch (e: Exception) {
-                e.message?.let { Log.e(TAG, it) }
+        fusedLocationProviderClient.lastLocation.addOnSuccessListener { location: Location? ->
+            if (null != location) {
+                try {
+                    val address = geoCodeLocation(location)
+                    representativeViewModel.setAddress(address)
+                } catch (e: Exception) {
+                    e.message?.let { Log.e(TAG, it) }
+                }
+            } else {
+                Snackbar.make(
+                    requireView(),
+                    getString(R.string.location_failed),
+                    Snackbar.LENGTH_LONG
+                ).show()
             }
         }
     }

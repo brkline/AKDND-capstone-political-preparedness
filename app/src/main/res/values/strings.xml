@@ -13,5 +13,8 @@
     <string name="fragment_voter_info_ballot_information_text">Ballot Information</string>
     <string name="unfollow_election_text">Unfollow Election</string>
     <string name="follow_election_text">Follow Election</string>
+    <string name="fragment_representatives_find_my_representatives_button_text">Find My Representatives</string>
+    <string name="fragment_respresentative_use_my_location_button_text">Use My Location</string>
+    <string name="location_failed">We are having trouble getting your location.  Please check your location settings.</string>
 
 </resources>
